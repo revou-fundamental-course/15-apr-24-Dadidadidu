@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi suhu</title>
+    <link rel="stylesheet" href="konversi suhu.css">
+</head>
+<body>
+
+<h2>Konversi Suhu</h2>
+<p>Ketik di Fahrenheit untuk konversi ke Celsius dan ketik di Celsius untuk konversi ke Fahrenheit</p>
+
+<div class="InputFahrenheit">
+    <label>Fahrenheit :</label>
+    <br>
+    <textarea id="inputFahrenheit" placeholder="Type here....." cols="30" rows="10"></textarea> 
+</div>
+ 
+
+  <div class="Button">
+    <button class="btn1" type="button" onclick="conversionFields()">Submit Fahrenheit</button>
+    <button class="btn2" type="reset" onclick="resetFields()">Reset</button>
+    <button class="btn3" type="Reverse" onclick="reverseFields()">Submit Celcius (Reverse)</button>
+  </div>
+
+<br>
+<br>
+<div class="OutputCelcius">
+    <label id="2">Celsius:</label>
+    <br>
+    <textarea id="outputCelsius" placeholder="Type here....." cols="30" rows="10"></textarea>    
+</div>
+    
+<div class="Caracara">
+    <label>Rumusnya :</label>
+    <br>
+    <textarea id="Rumus" cols="30" rows="10"></textarea>
+</div>
+
+
+<script>
+function conversionFields() {
+    let input1 = document.getElementById('inputFahrenheit').value;
+    let hasil1 = (input1 - 32) / 1.8;
+    let Fahrenheit = "°F";
+    let Celsius = "°C";
+    document.getElementById('outputCelsius').value = hasil1;
+    
+    document.getElementById('Rumus').value = "( " + input1 + "" + Fahrenheit + "- 32) / 1.8 = " + hasil1 + "" + Celsius + " ";
+}
+</script>
+    
+<script>
+function resetFields() {
+    document.getElementById('inputFahrenheit').value = ("");
+    document.getElementById('outputCelsius').value = ("");
+    document.getElementById('Rumus').value = ("");
+}
+</script>
+
+<script>
+function reverseFields() {
+    let input2 = document.getElementById('outputCelsius').value;
+    let hasil2 = (input2 * 1.8) + 32;
+    let Fahrenheit1 = "°F";
+    let Celsius1 = "°C";
+    document.getElementById('inputFahrenheit').value = hasil2;
+    
+    let rumusText = "( " + input2 + " " + Celsius1 + " - 32) / 1.8 = " + hasil2 + " " + Fahrenheit1 + " ";
+    document.getElementById('Rumus').value = rumusText;
+}
+</script>
+    
+
+<script>
+
+</script>
+    
+</body>
+</html>
